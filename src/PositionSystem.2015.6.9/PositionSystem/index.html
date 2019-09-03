@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+		<!--author:86 WTH Entertainment only-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>Position System</title>
+		
+		<!--[if IE]><script type="text/javascript" src="js/excanvas.compiled.js"></script><![endif]-->
+		<script src="js/calculate.js"></script>
+		<script src="js/control.js"></script>
+		<script src="js/drawXY.js"></script>
+		<script src="js/event.js"></script>
+		<script src="js/public.js"></script>
+		<script src="js/color and shape.js"></script>
+		<script src="js/rotate.js"></script>
+		
+		<style>
+		#title{
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
+			background-color:#00ffcc;
+		}
+		#canvas{
+			position:absolute;
+			top:20px;
+			left:0px;
+			width:70%;
+			height:95%;
+		}
+
+		.textBox{
+			width:20px;
+		}
+		
+		#dashboard{
+			position:relative;
+			top:20px;
+			right:0px;
+			position:absolute;
+			height:30%;
+			width:30%;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="title">
+			&nbsp;Position System&nbsp;86 WTH
+		</div>
+		
+		<div>		
+			<canvas height="440" width="700" id="canvas" onclick="locate();" onmousemove="canvasMouseMove();">Your web browser do not support canvas.</canvas>
+		</div>
+		
+		<div id="dashboard">
+			<fieldset visible="true" id="drawOption" style="border:2px red groove; Background-color:#d9d9d9" align="center">
+				<legend>绘制图形</legend>
+				</br>
+				point(x,y)</br>
+				line(x1,y1,x2,y2)</br>
+				circle(x,y,r)</br>
+				
+			</fieldset></br>
+			JavaScript代码调试器</br></br>
+			<textarea id="text"></textarea></br>
+			<input type="button" value="执行" onclick="excuse();"/>
+			<input type="button" value="清空画布" onclick="submit();"/>
+		</div>
+	</body>
+</html>

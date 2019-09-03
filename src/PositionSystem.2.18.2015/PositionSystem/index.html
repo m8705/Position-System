@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+	<head>
+		<!--author:86 WTH Entertainment only-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>Position System</title>
+		<script src="js/drawXY.js"></script>
+		<script src="js/calculate.js"></script>
+		<script src="js/control.js"></script>
+		<script src="js/draw.js"></script>
+		<script src="js/constructor.js"></script>
+		<script src="js/mouse.js"></script>
+		<script src="js/event.js"></script>
+		
+		<script src="js/function/line.js"></script>
+		<script src="js/function/cos.js"></script>
+		<script src="js/function/sin.js"></script>
+		<script src="js/function/tan.js"></script>
+		
+		<script src="js/function/circle.js"></script>
+		<script src="js/vector.js"></script>
+		
+		<script src="js/randomColor.js"></script>
+		
+		<script src="js/rotate.js"></script>
+		
+		<!--[if IE]><script type="text/javascript" src="js/excanvas.compiled.js"></script><![endif]-->
+		
+		<style>
+		#title{
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
+			background-color:#00ffcc;
+		}
+		#canvas{
+			position:absolute;
+			top:20px;
+			left:0px;
+			width:70%;
+			height:95%;
+		}
+
+		
+		
+		#dashboard{
+			position:relative;
+			top:20px;
+			right:0px;
+			position:absolute;
+			height:30%;
+			width:30%;
+		}
+		
+		#text{
+			position:relative;
+			top:10px;
+			right:0px;
+			position:absolute;
+			top:60%;
+			height:30%;
+			width:29%;
+		}
+		
+		#bu{
+			position:relative;
+			top:10px;
+			right:0px;
+			position:absolute;
+			top:94%;
+			height:5%;
+			width:29%;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="title">&nbsp;Position System&nbsp;86 WTH</div>
+			<div>		
+				<canvas height="440" width="700" id="canvas">Your web browser do not support canvas.</canvas>
+			</div>
+			
+			<div id="dashboard">
+				Graphic</br>
+				<img id="point" src="image/point.bmp" draggable="false" onmousemove="msMove('point');" onclick="msClick('point');" onmouseout="msOut('point');"/>
+				<img id="line" src="image/line.bmp" draggable="false" onmousemove="msMove('line');" onclick="msClick('line');" onmouseout="msOut('line');"/>
+				<img id="rect" src="image/rect.bmp" draggable="false" onmousemove="msMove('rect');" onclick="meDown('rect');" onmouseout="msOut('rect');"/>
+				<img id="circle" src="image/circle.bmp" draggable="false" onmousemove="msMove('circle');" onclick="msClick('circle');" onmouseout="msOut('circle');"/></br>
+				<img id="zoomIn" src="image/zoomIn.bmp" draggable="false" onmousemove="msMove('zoomIn');" onclick="" onmouseout="msOut('zoomIn');"/>
+				<img id="zoomOut" src="image/zoomOut.bmp" draggable="false" onmousemove="msMove('zoomOut');" onclick="zoomOut();" onmouseout="msOut('zoomOut');"/>
+				</br>
+				我的QQ号是2411448342，如有问题，可以联系我。
+			</div>
+			
+			
+			
+			<textarea id="text">var a = new Circle(Math.random(),Math.random(),Math.random());a.draw();</textarea>
+			
+			<div id="bu">
+				<input id="Excuse" type="button" value="Excuse" onclick="excuse();">
+				<input id="CleanCanvas" type="button" value="CleanCanvas" onclick="submit();">
+				<input id="CleanText" type="button" value="CleanText" onclick="cleanText();">
+				<input id="API" type="button" value="API" onclick="api();">
+			</div>
+			
+	</body>
+</html>

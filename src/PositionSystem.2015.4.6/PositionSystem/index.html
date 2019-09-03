@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<!--author:86 WTH Entertainment only-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>Position System</title>
+		
+		<script src="js/calculate.js"></script>
+		<script src="js/control.js"></script>
+		<script src="js/drawXY.js"></script>
+		<!--[if IE]><script type="text/javascript" src="js/excanvas.compiled.js"></script><![endif]-->
+		<script src="js/graphic.js"></script>
+		<script src="js/keyboard.js"></script>
+		<script src="js/mouse.js"></script>
+		<script src="js/public.js"></script>
+		<script src="js/randomColor.js"></script>
+		<script src="js/rotate.js"></script>
+		
+		<style>
+		#title{
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
+			background-color:#00ffcc;
+		}
+		#canvas{
+			position:absolute;
+			top:20px;
+			left:0px;
+			width:70%;
+			height:95%;
+		}
+
+		.textBox{
+			width:20px;
+		}
+		
+		#dashboard{
+			position:relative;
+			top:20px;
+			right:0px;
+			position:absolute;
+			height:30%;
+			width:30%;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="title">
+			&nbsp;Position System&nbsp;86 WTH
+		</div>
+		
+		<div>		
+			<canvas height="440" width="700" id="canvas" onclick="locate();" onmousemove="canvasMouseMove();">Your web browser do not support canvas.</canvas>
+		</div>
+		
+		<div id="dashboard">
+			<fieldset visible="true" id="drawOption" style="border:2px red groove; Background-color:#d9d9d9" align="center">
+				<legend>绘制图形</legend>
+				点 x:<input class="textBox" type="text" id="text1">y:<input class="textBox" type="text" id="text2">
+				</br>
+				线段 x1:<input class="textBox" type="text" id="text3">y1:<input class="textBox" type="text" id="text4"></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x2:<input class="textBox" type="text" id="text5">y2:<input class="textBox" type="text" id="text6">
+				</br>
+				
+				<input id="sure" value="绘制!" type="button" onclick='drawGraph();'/>
+			</fieldset>
+			</br>
+			<textarea id="text"></textarea></br>
+			<input type="button" value="执行" onclick="excuse();"/>
+			<input type="button" value="清空画布" onclick="submit();"/>
+		</div>
+	</body>
+</html>

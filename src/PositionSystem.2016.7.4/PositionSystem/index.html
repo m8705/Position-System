@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+	<head>
+		<!--author:86 WTH Entertainment only-->
+		<meta charset="UTF-8">
+		<title>Position System</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--[if IE]><script type="text/javascript" src="js/excanvas.compiled.js"></script><![endif]-->
+		<script src="js/calculate.js"></script>
+		<script src="js/control.js"></script>
+		<script src="js/drawXY.js"></script>
+		<script src="js/event.js"></script>
+		<script src="js/public.js"></script>
+		<script src="js/color and graphic.js"></script>
+		<script src="js/rotate.js"></script>
+		
+		<style>
+		#title{
+			position:absolute;
+			top:0px;
+			left:0px;
+			width:100%;
+			background-color:#00ccff;
+		}
+		
+		#canvas{
+			position:absolute;
+			top:20px;
+			left:0px;
+			width:70%;
+			height:95%;
+		}
+		
+		#dashboard{
+			position:relative;
+			top:20px;
+			right:0px;
+			position:absolute;
+			height:30%;
+			width:30%;
+		}
+
+		
+		</style>
+	</head>
+	<body>
+		<div id="title">
+			Position System
+		</div>
+		
+		<div>		
+			<canvas height="440" width="700" id="canvas">你用的浏览器不支持canvas功能,无法使用Position System,请换用更先进的浏览器<br/><a href="http://www.google.cn/intl/zh-CN/chrome/browser/desktop/">谷歌浏览器</a><br/><a href="http://www.firefox.com.cn/">火狐浏览器</a></canvas>
+		</div>
+		
+		<div id="dashboard">
+			
+			<details id="introduction">
+				<summary>项目简介</summary><br/>
+				PositionSystem是一个由Html5和JavaScript技术构建的动态多功能图形编程环境。通过学习并使用这一系统，你可以创建美丽的几何图形，探寻几何世界的奥秘；你也可以从中学到编程知识，扩宽自己的视野。
+			</details><br/>
+			
+			<details id="help">
+				<summary>使用帮助</summary>
+				<ul>
+					<li>如何绘图?</li>在下方的文本框内输入"绘制图形"里的方法,然后将里面的字母变量用数字替换,或者直接点击下方"举个栗子"按钮,然后点击"运行代码"按钮,即可绘制图像<br/><br/>
+					<li>找不到绘制的图形?</li>可能是绘制的图形超出了坐标轴能够显示的范围,可以尝试用鼠标滚轮进行缩放,或是按键盘方向键移动坐标轴<br/><br/>
+					<li>为什么文字内容显示得乱七八糟?</li>可能是使用的浏览器不完全支持HTML5,可以在电脑上试试用最新版的谷歌或火狐浏览器来浏览网页
+				</ul>
+			</details><br/>
+			
+			<details id="drawOption">
+				<summary>绘制图形</summary><br/>
+				text(x,y,t)<br/>
+				point(x,y)<br/>
+				line(x1,y1,x2,y2)<br/>
+				vector(x1,y1[,x2,y2])<br/>
+				circle(x,y,r)<br/>
+				rect(x,y,h,w)<br/>
+				下面的函数仍存在问题,请慎用<br/>
+				power(a)<br/>
+				log(a)<br/>
+				sin(a, omega, phi)<br/>
+				cos(a, omega, phi)<br/>
+				tan(a, omega, phi)<br/>
+			</details><br/>
+			
+			<details id="setting">
+				<summary>设置</summary>
+				<ul>
+					<caption>系统设置</caption>
+					<li>
+						显示坐标系和画布边框
+						<select id="showXY">
+							<option value="1">是</option>
+							<option value="0">否</option>
+						</select>
+					</li>
+					
+					<li>
+						重绘时清空画布
+						<select id="redrawClean">
+							<option value="1">是</option>
+							<option value="0">否</option>
+						</select>
+					</li>
+					
+					<li>
+						按下回车键执行代码
+						<select id="enterRun">
+							<option value="0">否</option>
+							<option value="1">是</option>
+						</select>
+					</li><br/>
+					
+					<caption>图形设置</caption>
+					
+					<li>
+						使用随机色
+						<select id="randomColor">
+							<option value="0">否</option>
+							<option value="1">是</option>
+						</select>
+					</li>
+				</ul>			
+			</details><br/>
+			
+			<details id="property">
+				<summary>属性</summary><br/>
+				画布长\宽:<div></div><br/>
+				窗口长\宽:<div></div><br/>
+				鼠标坐标(画布):<div></div><br/>
+				鼠标坐标(窗口):<div></div>
+			</details><br/>
+			
+			<details id="author">
+				<summary>关于作者</summary><br/>
+				广州市第八十六中学 吴堂煌<br/>
+				有问题或建议,欢迎和我交流<br/>
+				QQ:2411448342
+			</details><br/>
+			
+			<fieldset id="try" style="border:2px black groove; background-color:#00EE22" align="left">
+				<legend>动手试一试!</legend>
+				<textarea id="code">log(2);</textarea><br/>
+				<input type="button" value="运行代码" onclick="excuse();"/>
+				<input type="button" value="清空画布" onclick="clean();"/>
+				<input type="button" value="举个栗子" onclick="example();"/>
+			</fieldset>
+			
+			
+		</div>
+	</body>
+</html>
